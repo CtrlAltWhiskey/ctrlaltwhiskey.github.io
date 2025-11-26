@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Contact • CtrlAltWhiskey</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Contact information and links for CtrlAltWhiskey." />
+
+  <style>
+    :root {
+      color-scheme: dark light;
+      --bg: #020617;          /* slate-950-ish */
+      --card-bg: #020617;
+      --fg: #e5e7eb;          /* slate-200 */
+      --muted: #9ca3af;       /* gray-400 */
+      --accent: #f97316;      /* orange-500 */
+      --accent-soft: rgba(249, 115, 22, 0.16);
+      --border: rgba(148, 163, 184, 0.4);
+      --link: #fbbf24;        /* amber-400 */
+      --link-hover: #facc15;  /* amber-300 */
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      min-height: 100vh;
+      margin: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: radial-gradient(circle at top, #020617 0, #020617 45%, #020617 100%);
+      color: var(--fg);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem 1.25rem;
+    }
+
+    .wrapper {
+      width: 100%;
+      max-width: 720px;
+    }
+
+    .card {
+      background: var(--card-bg);
+      border-radius: 1.5rem;
+      padding: 2rem 2.4rem;
+      border: 1px solid var(--border);
+      box-shadow:
+        0 22px 45px rgba(15, 23, 42, 0.85),
+        0 0 0 1px rgba(15, 23, 42, 0.8);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .card::before {
+      content: "";
+      position: absolute;
+      inset: -40%;
+      background:
+        radial-gradient(circle at top left, var(--accent-soft) 0, transparent 55%),
+        radial-gradient(circle at bottom right, rgba(56, 189, 248, 0.08) 0, transparent 55%);
+      opacity: 0.9;
+      pointer-events: none;
+    }
+
+    .card-inner {
+      position: relative;
+      z-index: 1;
+    }
+
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.25rem 0.75rem;
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.6);
+      background: rgba(15, 23, 42, 0.9);
+      color: var(--muted);
+      font-size: 0.75rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      margin-bottom: 1.25rem;
+    }
+
+    .tag-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 999px;
+      background: var(--accent);
+      box-shadow: 0 0 12px rgba(249, 115, 22, 0.9);
+    }
+
+    h1 {
+      font-size: clamp(1.9rem, 4vw, 2.4rem);
+      line-height: 1.15;
+      margin-bottom: 0.35rem;
+    }
+
+    .subtitle {
+      font-size: 0.95rem;
+      color: var(--muted);
+      margin-bottom: 1.6rem;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: minmax(0, 2fr) minmax(0, 1.6fr);
+      gap: 2rem;
+      align-items: flex-start;
+    }
+
+    @media (max-width: 720px) {
+      body {
+        padding: 1.5rem 1rem;
+      }
+
+      .card {
+        padding: 1.6rem 1.4rem;
+        border-radius: 1.25rem;
+      }
+
+      .grid {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 1.4rem;
+      }
+    }
+
+    .section-title {
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: var(--muted);
+      margin-bottom: 0.8rem;
+    }
+
+    .contact-list {
+      list-style: none;
+      display: grid;
+      gap: 0.85rem;
+      font-size: 0.95rem;
+    }
+
+    .contact-item {
+      display: flex;
+      gap: 0.65rem;
+      align-items: baseline;
+    }
+
+    .contact-label {
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: var(--muted);
+      flex: 0 0 4rem;
+    }
+
+    .contact-value {
+      flex: 1;
+      word-break: break-word;
+    }
+
+    a {
+      color: var(--link);
+      text-decoration: none;
+      border-bottom: 1px solid rgba(248, 250, 252, 0.12);
+    }
+
+    a:hover {
+      color: var(--link-hover);
+      border-bottom-color: rgba(248, 250, 252, 0.4);
+    }
+
+    .note {
+      font-size: 0.8rem;
+      color: var(--muted);
+      margin-top: 1.2rem;
+      line-height: 1.6;
+    }
+
+    .links-list {
+      list-style: none;
+      display: grid;
+      gap: 0.5rem;
+      font-size: 0.95rem;
+    }
+
+    .links-list li::before {
+      content: "▹";
+      color: var(--accent);
+      margin-right: 0.45rem;
+      font-size: 0.85rem;
+    }
+
+    footer {
+      margin-top: 1.75rem;
+      font-size: 0.75rem;
+      color: var(--muted);
+      text-align: right;
+    }
+  </style>
+</head>
+<body>
+  <main class="wrapper">
+    <section class="card">
+      <div class="card-inner">
+        <div class="tag">
+          <span class="tag-dot"></span>
+          <span>CtrlAltWhiskey</span>
+        </div>
+
+        <h1>Get in touch</h1>
+        <p class="subtitle">
+          Contact details and links.
+        </p>
+
+        <div class="grid">
+          <div>
+            <h2 class="section-title">Contact</h2>
+            <ul class="contact-list">
+              <li class="contact-item">
+                <span class="contact-label">Email</span>
+                <span class="contact-value">
+                  <a href="mailto:mail@ctrlaltwhiskey.com">mail@ctrlaltwhiskey.com</a>
+                </span>
+              </li>
+              <li class="contact-item">
+                <span class="contact-label">Location</span>
+                <span class="contact-value">Knoxville, Tennessee</span>
+              </li>
+            </ul>
+
+            <p class="note">
+              Best way to reach me is email. I’m usually slow on DMs but will
+              eventually see them.
+            </p>
+          </div>
+
+          <div>
+            <h2 class="section-title">Elsewhere</h2>
+            <ul class="links-list">
+              <li>
+                <a href="https://bsky.app/profile/ctrlaltwhiskey" target="_blank" rel="me noopener">
+                  Bluesky / @ctrlaltwhiskey.com
+                </a>
+              </li>
+              <li>
+                <a href="https://mastodon.social/@ctrlaltwhiskey" target="_blank" rel="me noopener">
+                  Mastodon / @ctrlaltwhiskey
+                </a>
+              </li>
+              <li>
+                <a href="https://discord.com/users/83958108333838336" target="_blank" rel="noopener"> 
+                  Discord / @CtrlAltWhiskey
+                </a>
+              </li>
+            </ul>
+
+            <p class="note">
+              These links change sometimes; this page should always have the
+              latest ways to find me online.
+            </p>
+          </div>
+        </div>
+
+        <footer>
+          © <span id="year"></span> CtrlAltWhiskey
+        </footer>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    // Keep the year automatic so you don't have to touch this again
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
