@@ -2,23 +2,39 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Contact • CtrlAltWhiskey</title>
+  <title>Contact - CtrlAltWhiskey</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Contact information and links for CtrlAltWhiskey." />
-  <meta name="robots" content="noindex">
+  <meta name="description" content="Official contact details and verified links for CtrlAltWhiskey." />
+  <meta name="robots" content="noindex" />
+  <meta name="theme-color" content="#020617" />
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  <link rel="canonical" href="https://ctrlaltwhiskey.com/" />
+
+  <meta property="og:type" content="profile" />
+  <meta property="og:site_name" content="CtrlAltWhiskey" />
+  <meta property="og:title" content="Contact - CtrlAltWhiskey" />
+  <meta property="og:description" content="Official contact details and verified links for CtrlAltWhiskey." />
+  <meta property="og:url" content="https://ctrlaltwhiskey.com/" />
+  <meta property="og:image" content="https://ctrlaltwhiskey.com/og-image.svg" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Contact - CtrlAltWhiskey" />
+  <meta name="twitter:description" content="Official contact details and verified links for CtrlAltWhiskey." />
+  <meta name="twitter:image" content="https://ctrlaltwhiskey.com/og-image.svg" />
 
   <style>
     :root {
       color-scheme: dark light;
-      --bg: #020617;          /* slate-950-ish */
+      --bg: #020617;
+      --bg-mid: #071127;
       --card-bg: #020617;
-      --fg: #e5e7eb;          /* slate-200 */
-      --muted: #9ca3af;       /* gray-400 */
-      --accent: #f97316;      /* orange-500 */
+      --fg: #e5e7eb;
+      --muted: #9ca3af;
+      --accent: #f97316;
       --accent-soft: rgba(249, 115, 22, 0.16);
       --border: rgba(148, 163, 184, 0.4);
-      --link: #fbbf24;        /* amber-400 */
-      --link-hover: #facc15;  /* amber-300 */
+      --link: #fbbf24;
+      --link-hover: #facc15;
     }
 
     * {
@@ -31,7 +47,10 @@
       min-height: 100vh;
       margin: 0;
       font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      background: radial-gradient(circle at top, #020617 0, #020617 45%, #020617 100%);
+      background:
+        radial-gradient(1200px 500px at -5% -10%, rgba(249, 115, 22, 0.16), transparent 55%),
+        radial-gradient(950px 420px at 105% 110%, rgba(56, 189, 248, 0.14), transparent 50%),
+        linear-gradient(155deg, var(--bg) 0%, var(--bg-mid) 45%, var(--bg) 100%);
       color: var(--fg);
       display: flex;
       align-items: center;
@@ -168,11 +187,29 @@
       color: var(--link);
       text-decoration: none;
       border-bottom: 1px solid rgba(248, 250, 252, 0.12);
+      transition: color 120ms ease, border-color 120ms ease, background-color 120ms ease;
     }
 
     a:hover {
       color: var(--link-hover);
       border-bottom-color: rgba(248, 250, 252, 0.4);
+    }
+
+    a:focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: 3px;
+    }
+
+    .contact-value a {
+      display: inline-flex;
+      align-items: center;
+      min-height: 2.5rem;
+      padding: 0 0.4rem;
+      border-radius: 0.5rem;
+    }
+
+    .contact-value a:hover {
+      background: rgba(30, 41, 59, 0.75);
     }
 
     .note {
@@ -189,11 +226,35 @@
       font-size: 0.95rem;
     }
 
+    .links-list li {
+      position: relative;
+    }
+
     .links-list li::before {
-      content: "▹";
+      content: ">";
       color: var(--accent);
-      margin-right: 0.45rem;
+      position: absolute;
+      left: 0.5rem;
+      top: 50%;
+      transform: translateY(-50%);
       font-size: 0.85rem;
+    }
+
+    .links-list a {
+      display: flex;
+      align-items: center;
+      min-height: 2.75rem;
+      padding: 0.45rem 0.65rem 0.45rem 1.35rem;
+      border-radius: 0.6rem;
+      border: 1px solid rgba(148, 163, 184, 0.22);
+      border-bottom-color: rgba(148, 163, 184, 0.22);
+      background: rgba(15, 23, 42, 0.52);
+    }
+
+    .links-list a:hover {
+      border-color: rgba(148, 163, 184, 0.5);
+      border-bottom-color: rgba(148, 163, 184, 0.5);
+      background: rgba(30, 41, 59, 0.76);
     }
 
     footer {
@@ -235,7 +296,7 @@
             </ul>
 
             <p class="note">
-              Best way to reach me is email. I’m usually slow on DMs but will
+              Best way to reach me is email. I'm usually slow on DMs but will
               eventually see them.
             </p>
           </div>
@@ -244,22 +305,22 @@
             <h2 class="section-title">Elsewhere</h2>
             <ul class="links-list">
               <li>
-                <a href="https://signal.me/#eu/O6W6AKTi24bDkpgAw7Gf4ehUQ_cSj0NRgvy4rmhVlDWS5nlGAddIn7ne0O_x2cU9" target="_blank" rel="me noopener">
+                <a href="https://signal.me/#eu/O6W6AKTi24bDkpgAw7Gf4ehUQ_cSj0NRgvy4rmhVlDWS5nlGAddIn7ne0O_x2cU9" target="_blank" rel="me noopener noreferrer">
                   Signal / ctrlaltwhiskey.13
                 </a>
               </li>
               <li>
-                <a href="https://discord.com/users/83958108333838336" target="_blank" rel="noopener"> 
+                <a href="https://discord.com/users/83958108333838336" target="_blank" rel="noopener noreferrer">
                   Discord / @CtrlAltWhiskey
                 </a>
               </li>
               <li>
-                <a href="https://bsky.app/profile/ctrlaltwhiskey.bsky.social" target="_blank" rel="me noopener">
+                <a href="https://bsky.app/profile/ctrlaltwhiskey.bsky.social" target="_blank" rel="me noopener noreferrer">
                   Bluesky / @ctrlaltwhiskey
                 </a>
               </li>
               <li>
-                <a href="https://mastodon.social/@ctrlaltwhiskey" target="_blank" rel="me noopener">
+                <a href="https://mastodon.social/@ctrlaltwhiskey" target="_blank" rel="me noopener noreferrer">
                   Mastodon / @ctrlaltwhiskey
                 </a>
               </li>
@@ -273,14 +334,14 @@
         </div>
 
         <footer>
-          © <span id="year"></span> CtrlAltWhiskey
+          &copy; <span id="year"></span> CtrlAltWhiskey
         </footer>
       </div>
     </section>
   </main>
 
   <script>
-    // Keep the year automatic so you don't have to touch this again
+    // Keep the year automatic so you don't have to touch this again.
     document.getElementById("year").textContent = new Date().getFullYear();
   </script>
 </body>
